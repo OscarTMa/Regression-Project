@@ -24,9 +24,9 @@ Regression is a fundamental supervised machine learning technique used to predic
 - Visualize model predictions versus actual values.
   
 ## Project Goals
-1.Build a robust regression model to predict [target variable, e.g., house prices].
-2.Explore and visualize patterns in the data.
-3.Highlight practical insights for stakeholders, such as the most influential factors affecting the target variable.
+1.Build a robust regression model to predict [target variable, e.g., house prices].                                      
+2.Explore and visualize patterns in the data.                                                 
+3.Highlight practical insights for stakeholders, such as the most influential factors affecting the target variable.                                          
 
 ## Technologies Used
 - Python for data processing and modeling.
