@@ -54,25 +54,25 @@ jupyter notebook notebooks/exploratory_analysis.ipynb
 ## Project Structure
 Regression-Project/                                                    
 │                                                    
-├── data/                    # Archivos de datos                                                    
-│   ├── raw/                 # Datos sin procesar                                                    
-│   ├── processed/           # Datos después del preprocesamiento                                                    
+├── data/                    #                                                
+│   ├── raw/                 #                                                     
+│   ├── processed/           #                                                     
 │                                                    
-├── notebooks/               # Notebooks de Jupyter                                                    
-│   ├── exploratory_analysis.ipynb # Análisis exploratorio                                                    
-│   ├── regression_model.ipynb     # Modelado de regresión                                                    
+├── notebooks/               #                                                     
+│   ├── exploratory_analysis.ipynb #                                                    
+│   ├── regression_model.ipynb     #                                                     
 │                                                    
-├── scripts/                 # Scripts Python reutilizables                                                    
+├── scripts/                 #                                                     
 │   ├── data_preprocessing.py                                                    
 │   ├── model_training.py                                                    
 │   ├── evaluation.py                                                    
 │                                                    
-├── visuals/                 # Imágenes y gráficos generados                                                    
+├── visuals/                 #                                                     
 │                                                    
-├── README.md                # Descripción del proyecto                                                    
-├── requirements.txt         # Dependencias necesarias                                                    
-├── LICENSE                  # Licencia del proyecto                                                    
-└── .gitignore               # Archivos a ignorar por Git                                                    
+├── README.md                #                                                     
+├── requirements.txt         #                                                     
+├── LICENSE                  #                                                     
+└── .gitignore               #                                                     
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements.
