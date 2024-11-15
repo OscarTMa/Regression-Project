@@ -1,7 +1,52 @@
 # Regression-Project
 
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Project Structure](#project-structure)
+5. [Contributing](#contributing)
+6. [License](#license)
+
 ## Description
 Regression is a fundamental supervised machine learning technique used to predict continuous numerical outcomes based on input features. This project focuses on applying regression to [The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic prices and the demand for clean air', J. Environ. Economics & Management, vol.5, 81-102, 1978.] using a structured dataset. The analysis is designed to provide insights into the relationships between input features and the target variable while also delivering an accurate predictive model.
+
+## Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/oscar/Regression-Project.git
+
+## Usage
+jupyter notebook notebooks/exploratory_analysis.ipynb
+
+## Project Structure
+Regression-Project/                                                    
+│                                                    
+├── data/                    # Archivos de datos                                                    
+│   ├── raw/                 # Datos sin procesar                                                    
+│   ├── processed/           # Datos después del preprocesamiento                                                    
+│                                                    
+├── notebooks/               # Notebooks de Jupyter                                                    
+│   ├── exploratory_analysis.ipynb # Análisis exploratorio                                                    
+│   ├── regression_model.ipynb     # Modelado de regresión                                                    
+│                                                    
+├── scripts/                 # Scripts Python reutilizables                                                    
+│   ├── data_preprocessing.py                                                    
+│   ├── model_training.py                                                    
+│   ├── evaluation.py                                                    
+│                                                    
+├── visuals/                 # Imágenes y gráficos generados                                                    
+│                                                    
+├── README.md                # Descripción del proyecto                                                    
+├── requirements.txt         # Dependencias necesarias                                                    
+├── LICENSE                  # Licencia del proyecto                                                    
+└── .gitignore               # Archivos a ignorar por Git                                                    
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Key Concepts Covered
 1.Exploratory Data Analysis (EDA)
@@ -33,3 +78,5 @@ Regression is a fundamental supervised machine learning technique used to predic
 - Pandas and NumPy for data manipulation.
 - Matplotlib and Seaborn for visualizations.
 - Scikit-learn for machine learning algorithms and metrics.
+
+
