@@ -54,25 +54,25 @@ jupyter notebook notebooks/exploratory_analysis.ipynb
 ## Project Structure
 Regression-Project/                                                    
 │                                                    
-├── data/                    #                                                
-│   ├── raw/                 #                                                     
-│   ├── processed/           #                                                     
+├── data/                                                                    
+│   ├── raw/                                                                      
+│   ├── processed/                                                                
 │                                                    
-├── notebooks/               #                                                     
-│   ├── exploratory_analysis.ipynb #                                                    
-│   ├── regression_model.ipynb     #                                                     
+├── notebooks/                                                                    
+│   ├── exploratory_analysis.ipynb                                                     
+│   ├── regression_model.ipynb                                                          
 │                                                    
-├── scripts/                 #                                                     
+├── scripts/                                                                      
 │   ├── data_preprocessing.py                                                    
 │   ├── model_training.py                                                    
 │   ├── evaluation.py                                                    
 │                                                    
-├── visuals/                 #                                                     
+├── visuals/                                                                      
 │                                                    
-├── README.md                #                                                     
-├── requirements.txt         #                                                     
-├── LICENSE                  #                                                     
-└── .gitignore               #                                                     
+├── README.md                                                                     
+├── requirements.txt                                                              
+├── LICENSE                                                                       
+└── .gitignore                                                                    
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements.
