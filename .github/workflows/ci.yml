@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Descargar el código del repositorio
+      uses: actions/checkout@v4  # Actualizado a Node.js 20
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5  # Actualizado a Node.js 20
       with:
         python-version: '3.9'  # Ajusta según tu versión de Python
 
@@ -31,4 +31,3 @@ jobs:
       run: |
         pip install nbconvert  # Instalar nbconvert para ejecutar notebooks
         jupyter nbconvert --to notebook --execute Boston_House_Price_Regression.ipynb
-
