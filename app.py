@@ -8,8 +8,18 @@ model = joblib.load("models/regression_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
 
 # Cargar el dataset para obtener rangos de entrada
-path = kagglehub.dataset_download("fedesoriano/the-boston-houseprice-data")
-print("Path to dataset files:", path)
+import os
+from kaggle.api.kaggle_api_extended import KaggleApi
+
+# Descargar el dataset
+api = KaggleApi()
+api.authenticate()
+
+dataset = "fedesoriano/the-boston-houseprice-data"
+download_path = "datasets"
+api.dataset_download_files(dataset, path=download_path, unzip=True)
+
+print(f"Dataset descargado y extraído en: {download_path}")
 
 # Load CSV into a DataFrame
 data = pd.read_csv(f"{path}/boston.csv")
