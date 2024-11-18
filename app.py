@@ -4,8 +4,8 @@ import pandas as pd
 import joblib
 
 # Cargar el modelo y el escalador
-model = joblib.load("regression_model.pkl")
-scaler = joblib.load("scaler.pkl")
+model = joblib.load("models/regression_model.pkl")
+scaler = joblib.load("models/scaler.pkl")
 
 # Cargar el dataset para obtener rangos de entrada
 path = kagglehub.dataset_download("fedesoriano/the-boston-houseprice-data")
