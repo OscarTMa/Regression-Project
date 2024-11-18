@@ -30,4 +30,4 @@ jobs:
     - name: Test notebook execution
       run: |
         pip install nbconvert  # Instalar nbconvert para ejecutar notebooks
-        jupyter nbconvert --to notebook --execute notebooks/Boston_House_Price_Regression.ipynb
+        jupyter nbconvert --to notebook --execute notebooks/Boston_House_Price_Regression02.ipynb
