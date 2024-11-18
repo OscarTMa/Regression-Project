@@ -22,7 +22,8 @@ api.dataset_download_files(dataset, path=download_path, unzip=True)
 print(f"Dataset descargado y extraído en: {download_path}")
 
 # Load CSV into a DataFrame
-data = pd.read_csv(f"{path}/boston.csv")
+#data = pd.read_csv(f"{path}/boston.csv")   #inicial
+data = pd.read_csv(f"{download_path}/boston.csv")
 
 feature_names = data.drop(columns=["MEDV"]).columns
 
