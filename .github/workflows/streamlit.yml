@@ -1,10 +1,7 @@
 name: Streamlit Deployment
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  workflow_dispatch:  # Este flujo se inicia manualmente desde GitHub Actions
 
 jobs:
   run-streamlit:
