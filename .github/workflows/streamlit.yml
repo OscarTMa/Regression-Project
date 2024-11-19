@@ -32,7 +32,7 @@ jobs:
 
     - name: Start Streamlit with ngrok
       run: |
-        nohup streamlit run app.py --server.headless true &
+        nohup streamlit run app.py --server.headless true --server.enableCORS false &
         sleep 10
         nohup ngrok http 8501 > ngrok.log 2>&1 &
         sleep 15
