@@ -1,5 +1,36 @@
-pip install streamlit
+name: Streamlit Deployment
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
-streamlit run app.py
+jobs:
+  run-streamlit:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Chequea el código del repositorio
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    # 2. Configura Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+
+    # 3. Instala dependencias
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    # 4. Ejecuta Streamlit (opcionalmente en segundo plano para pruebas)
+    - name: Run Streamlit app
+      run: |
+        nohup streamlit run app.py --server.headless true &
+        sleep 10
+        curl -I http://localhost:8501
+
 
