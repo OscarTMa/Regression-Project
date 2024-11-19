@@ -25,18 +25,19 @@ jobs:
         tar -xvf ngrok-v3-stable-linux-amd64.tgz
         sudo mv ngrok /usr/local/bin/
 
-    - name: Start Streamlit with ngrok
+    - name: Configure ngrok
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+      run: ngrok config add-authtoken $NGROK_AUTH_TOKEN
+
+    - name: Start Streamlit with ngrok
       run: |
         nohup streamlit run app.py --server.headless true &
-        sleep 5
-        ngrok config add-authtoken $NGROK_AUTH_TOKEN
-        nohup ngrok http 8501 > ngrok.log 2>&1 &
         sleep 10
+        nohup ngrok http 8501 > ngrok.log 2>&1 &
+        sleep 15
         PUBLIC_URL=$(curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')
         echo "Your Streamlit app is available at: $PUBLIC_URL"
 
     - name: Check ngrok logs
       run: cat ngrok.log
-
