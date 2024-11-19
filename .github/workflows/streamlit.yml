@@ -1,39 +1,37 @@
 name: Streamlit Deployment
 
-#on:
-#  workflow_dispatch:  # Este flujo se inicia manualmente desde GitHub Actions
-
 on:
-  push:
-    branches:
-      - main  # Se ejecuta al hacer push en la rama "main"
-  pull_request:  # También se ejecuta en un pull request
+  workflow_dispatch:
 
 jobs:
   run-streamlit:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Chequea el código del repositorio
     - name: Check out code
       uses: actions/checkout@v3
 
-    # 2. Configura Python
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: 3.9
 
-    # 3. Instala dependencias
     - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      run: pip install -r requirements.txt
 
-    # 4. Ejecuta Streamlit (opcionalmente en segundo plano para pruebas)
-    - name: Run Streamlit app
+    - name: Install ngrok
+      run: |
+        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+        unzip ngrok-stable-linux-amd64.zip
+        sudo mv ngrok /usr/local/bin/
+
+    - name: Run Streamlit app with ngrok
+      env:
+        NGROK_AUTH_TOKEN: ${{ secrets.2W404xvAfHrSKJPcpKV5ae4k6Hv_5LS411yjb1rnQQhcH2vJM }}  # Debes configurar tu token en GitHub Secrets
       run: |
         nohup streamlit run app.py --server.headless true &
+        sleep 5
+        ngrok authtoken $NGROK_AUTH_TOKEN
+        nohup ngrok http 8501 &
         sleep 10
-        curl -I http://localhost:8501
-
-
+        curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url'
