@@ -1,9 +1,12 @@
-name: Regression Project CI
+name: CI Workflow
 
 on:
   push:
     branches:
-      - main  # Ejecutar flujo en la rama main
+      - main  # Solo se ejecuta en la rama principal
+  pull_request:
+    branches:
+      - main  # Ejecuta pruebas para cada PR hacia la rama principal
 
 jobs:
   test:
