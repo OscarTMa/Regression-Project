@@ -25,7 +25,7 @@ jobs:
 
     - name: Set Kaggle credentials
       run: |
-           ls -l /home/adminuser/venv      
+           ls -l /home/    
         
     - name: Deploy to Streamlit Cloud
       env:
