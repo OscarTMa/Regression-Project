@@ -29,12 +29,12 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    #- name: Set Kaggle credentials
-    #  run: |
-    #    mkdir -p /home/streamlit/.kaggle
-    #    echo "{\"username\": \"${{ secrets.KAGGLE_USERNAME }}\", \"key\": \"${{ secrets.KAGGLE_KEY }}\"}" > /home/streamlit/.kaggle/kaggle.json
-    #    chmod 600 /home/streamlit/.kaggle/kaggle.json
-
+    - name: Set Kaggle credentials
+      run: |
+        mkdir -p ~/.kaggle
+        echo "{\"username\": \"${{ secrets.KAGGLE_USERNAME }}\", \"key\": \"${{ secrets.KAGGLE_KEY }}\"}" > ~/.kaggle/kaggle.json
+        chmod 600 ~/.kaggle/kaggle.json
+    
     - name: Verify DIRECTORIES
       run: |
         echo ========================================
