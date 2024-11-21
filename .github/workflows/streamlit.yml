@@ -35,7 +35,7 @@ jobs:
         echo "{\"username\": \"${{ secrets.KAGGLE_USERNAME }}\", \"key\": \"${{ secrets.KAGGLE_KEY }}\"}" > /home/streamlit/.kaggle/kaggle.json
         chmod 600 /home/streamlit/.kaggle/kaggle.json
 
-    - name: Verify Kaggle credentials
+    - name: Verify DIRECTORIES
       run: |
         echo ========================================
         ls -la 
