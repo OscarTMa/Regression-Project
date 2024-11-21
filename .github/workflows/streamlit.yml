@@ -26,15 +26,16 @@ jobs:
     - name: Set Kaggle credentials
       run: |
            ls -l /home/    
-             
+
+    - name: Deploy  verify_kaggle
+      run:  |
+         python verify_kaggle.py
+         
     - name: Deploy to Streamlit Cloud
       env:
         STREAMLIT_CLOUD_EMAIL: ${{ secrets.STREAMLIT_CLOUD_EMAIL }}
         STREAMLIT_CLOUD_PASSWORD: ${{ secrets.STREAMLIT_CLOUD_PASSWORD }}
-        
-      pre-run:
-        - python verify_kaggle.py
-      
+       
       run: |
         echo "Configuring Streamlit Cloud deployment..."
         streamlit run app.py
