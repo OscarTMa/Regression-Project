@@ -31,9 +31,13 @@ jobs:
 
     - name: Set Kaggle credentials
       run: |
-        #mkdir -p /root/.kaggle
-        echo "{\"username\": \"${{ secrets.KAGGLE_USERNAME }}\", \"key\": \"${{ secrets.KAGGLE_KEY }}\"}" > /home/appuser/.config/kaggle/kaggle.json
-        chmod 600 /home/appuser/.config/kaggle/kaggle.json
+        mkdir -p /home/streamlit/.kaggle
+        echo "{\"username\": \"${{ secrets.KAGGLE_USERNAME }}\", \"key\": \"${{ secrets.KAGGLE_KEY }}\"}" > /home/streamlit/.kaggle/kaggle.json
+        chmod 600 /home/streamlit/.kaggle/kaggle.json
+
+    - name: Verify Kaggle credentials
+      run: |
+        ls -la /home/streamlit/.kaggle 
 
     - name: Deploy to Streamlit Cloud
       env:
