@@ -120,14 +120,16 @@ User Data File: Copy the commands in workflows_aws/ec2_AWS.txt and paste them in
 Install Python, pip, and Streamlit.
 Install dependencies from requirements.txt.
 Launch the application on the configured port.
+
 Benefits:
 Full control over the runtime environment.
-Scalability to handle varying levels of traffic and usage.
+Scalability to handle varying levels of traffic and usage.                                    
+
 Summary
 Each workflow serves a distinct purpose:
 
-Streamlit Cloud: For quick and easy deployment.
-Ngrok: For temporary public testing (under development).
-AWS EC2: For robust and scalable deployments.
+- Streamlit Cloud: For quick and easy deployment.
+- Ngrok: For temporary public testing (under development).
+- AWS EC2: For robust and scalable deployments.
 
 Follow the instructions in each workflow file to implement the desired deployment strategy.
