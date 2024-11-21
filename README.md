@@ -73,10 +73,10 @@ Regression-Project/
 ├── README.md                                                                     
 ├── requirements.txt                                                              
 ├── LICENSE                                                                       
-├── .gitignore 
-│   ├── workflows                                                    
-│   ├── workflows_aws                                                   
-│   ├── workflows_ngrok         
+├── .gitignore                      
+│   ├── workflows                                                                                     
+│   ├── workflows_aws                                                                                 
+│   ├── workflows_ngrok                                       
 
 
 ## Contributing
@@ -106,30 +106,30 @@ This workflow facilitates automatic deployment of the application to Streamlit C
 2. workflows_ngrok/streamlit_ngrok_solution: **Running with Ngrok**
 This workflow is intended to expose the local Streamlit application to the internet using Ngrok, a tool for creating secure HTTPS tunnels to localhost.
 
-**Key Features:**
-- Core File: workflows_ngrok/streamlit_ngrok_solution.
-- Configures Ngrok to create a tunnel and expose the application.
-- **Currently Non-Functional** due to recent changes in Ngrok's tunneling and endpoint APIs.
+   **Key Features:**
+    - Core File: workflows_ngrok/streamlit_ngrok_solution.
+    - Configures Ngrok to create a tunnel and expose the application.
+    - **Currently Non-Functional** due to recent changes in Ngrok's tunneling and endpoint APIs.
   
-**Current Limitations:**
-- Ngrok updates have broken compatibility with the current implementation.
-- Ongoing efforts aim to adapt this workflow to the latest Ngrok standards.
-**Future Use:**
-- This workflow has potential for temporary public exposure of local applications without a dedicated hosting platform.
+   **Current Limitations:**
+    - Ngrok updates have broken compatibility with the current implementation.
+    - Ongoing efforts aim to adapt this workflow to the latest Ngrok standards.
+   **Future Use:**
+    - This workflow has potential for temporary public exposure of local applications without a dedicated hosting platform.
 
 3. workflows_aws/ec2_AWS.txt: **Deploying to AWS EC2**
 This workflow outlines the steps for deploying the application on an AWS EC2 instance. It is suited for scalable and customizable environments.
 
 **Key Steps:**
-- **Launch an EC2 Instance:** Use the AWS Management Console or AWS CLI to create an instance.
-- **User Data File:** Copy the commands in workflows_aws/ec2_AWS.txt and paste them into the "User Data" field during the instance setup. These commands:
--- Install Python, pip, and Streamlit.
--- Install dependencies from requirements.txt.
--- Launch the application on the configured port.
+    - **Launch an EC2 Instance:** Use the AWS Management Console or AWS CLI to create an instance.
+    - **User Data File:** Copy the commands in workflows_aws/ec2_AWS.txt and paste them into the "User Data" field during the instance setup. These commands:
+    -- Install Python, pip, and Streamlit.
+    -- Install dependencies from requirements.txt.
+    -- Launch the application on the configured port.
 
 **Benefits:**
-- Full control over the runtime environment.
-- Scalability to handle varying levels of traffic and usage.                                    
+  - Full control over the runtime environment.
+  - Scalability to handle varying levels of traffic and usage.                                    
 
 ## Summary
 Each workflow serves a distinct purpose:
