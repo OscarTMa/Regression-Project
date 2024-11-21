@@ -37,7 +37,9 @@ jobs:
 
     - name: Verify Kaggle credentials
       run: |
-        ls -la /home
+        echo ========================================
+        ls -la 
+        echo ========================================
         #ls -la /home/streamlit/.kaggle
 
     - name: Deploy to Streamlit Cloud
