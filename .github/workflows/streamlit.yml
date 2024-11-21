@@ -35,5 +35,5 @@ jobs:
         STREAMLIT_CLOUD_PASSWORD: ${{ secrets.STREAMLIT_CLOUD_PASSWORD }}
       run: |
         echo "Configuring Streamlit Cloud deployment..."
-        streamlit config set server.headless true
+        #streamlit config set server.headless true
         streamlit run app.py
