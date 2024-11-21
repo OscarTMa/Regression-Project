@@ -25,8 +25,7 @@ jobs:
 
     - name: Set Kaggle credentials
       run: |
-        mkdir -p /home/streamlit/.kaggle
-        ls -l /home/streamlit/.kaggle        
+           ls -l /home/adminuser/venv/lib/python3.12/site-packages/streamlit/runtime        
         
     - name: Deploy to Streamlit Cloud
       env:
