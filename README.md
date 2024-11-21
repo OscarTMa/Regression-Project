@@ -73,7 +73,11 @@ Regression-Project/
 ├── README.md                                                                     
 ├── requirements.txt                                                              
 ├── LICENSE                                                                       
-└── .gitignore                                                                    
+├── .gitignore 
+│   ├── workflows                                                    
+│   ├── workflows_aws                                                   
+│   ├── workflows_ngrok         
+
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements.
@@ -89,15 +93,15 @@ This project provides three distinct workflows to enable deployment and environm
 1. Workflows/streamlit.yml: **Deploying to Streamlit Cloud**                          
 This workflow facilitates automatic deployment of the application to Streamlit Cloud, a free hosting service specifically designed for Streamlit-based applications.
 
-**Key Features:**
-- **Core File**: .github/workflows/streamlit.yml.            
-- Automatically installs dependencies from requirements.txt.                  
-- Configures environment variables and prepares necessary files, such as kaggle.json, for data access.                   
-- Ideal for simple and rapid deployments of Streamlit applications.
+   **Key Features:**
+    - **Core File**: .github/workflows/streamlit.yml.            
+    - Automatically installs dependencies from requirements.txt.                  
+    - Configures environment variables and prepares necessary files, such as kaggle.json, for data access.                   
+     - Ideal for simple and rapid deployments of Streamlit applications.
   
-**Benefits:**
-- Free hosting with public access.
-- Streamlined management of dependencies and environment setup.
+     **Benefits:**
+     - Free hosting with public access.
+     - Streamlined management of dependencies and environment setup.
 
 2. workflows_ngrok/streamlit_ngrok_solution: **Running with Ngrok**
 This workflow is intended to expose the local Streamlit application to the internet using Ngrok, a tool for creating secure HTTPS tunnels to localhost.
