@@ -33,4 +33,16 @@ if __name__ == "__main__":
         tree(root_dir, f)
     
     print(f"Estructura guardada en: {output_file_path}")
+ 
+    ########
+
+    file_path = "/home/appuser/file_structure.txt"
+
+    with open(file_path, "rb") as f:
+         st.download_button(
+             label="Descargar file_structure.txt",
+             data=f,
+             file_name="file_structure.txt",
+             mime="text/plain",
+         )
 
