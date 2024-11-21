@@ -1,0 +1,43 @@
+name: Streamlit Deployment with ngrok
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-streamlit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Install latest ngrok
+      run: |
+        wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+        tar -xvf ngrok-v3-stable-linux-amd64.tgz
+        sudo mv ngrok /usr/local/bin/
+
+    - name: Configure ngrok
+      env:
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+      run: ngrok config add-authtoken $NGROK_AUTH_TOKEN
+
+    - name: Start Streamlit with ngrok
+      run: |
+        nohup streamlit run app.py --server.headless true --server.enableCORS false &
+        sleep 10
+        nohup ngrok http 8501 > ngrok.log 2>&1 &
+        sleep 15
+        PUBLIC_URL=$(curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')
+        echo "Your Streamlit app is available at: $PUBLIC_URL"
+
+    - name: Check ngrok logs
+      run: cat ngrok.log
