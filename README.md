@@ -120,7 +120,7 @@ This workflow is intended to expose the local Streamlit application to the inter
 3. workflows_aws/ec2_AWS.txt: **Deploying to AWS EC2**
 This workflow outlines the steps for deploying the application on an AWS EC2 instance. It is suited for scalable and customizable environments.
 
-**Key Steps:**
+   **Key Steps:**
     - **Launch an EC2 Instance:** Use the AWS Management Console or AWS CLI to create an instance.
     - **User Data File:** Copy the commands in workflows_aws/ec2_AWS.txt and paste them into the "User Data" field during the instance setup. These commands:
         - Install Python, pip, and Streamlit.                  
