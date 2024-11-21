@@ -1,10 +1,14 @@
-name: Streamlit Deployment with ngrok
+name: Deploy to Streamlit Cloud
 
 on:
+  push:
+    branches:
+      - main  # Despliega cuando hay cambios en la rama principal
+
   workflow_dispatch:
 
 jobs:
-  run-streamlit:
+  deploy-streamlit:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,25 +23,11 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Install latest ngrok
-      run: |
-        wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-        tar -xvf ngrok-v3-stable-linux-amd64.tgz
-        sudo mv ngrok /usr/local/bin/
-
-    - name: Configure ngrok
+    - name: Deploy to Streamlit Cloud
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-      run: ngrok config add-authtoken $NGROK_AUTH_TOKEN
-
-    - name: Start Streamlit with ngrok
+        STREAMLIT_CLOUD_EMAIL: ${{ secrets.STREAMLIT_CLOUD_EMAIL }}
+        STREAMLIT_CLOUD_PASSWORD: ${{ secrets.STREAMLIT_CLOUD_PASSWORD }}
       run: |
-        nohup streamlit run app.py --server.headless true --server.enableCORS false &
-        sleep 10
-        nohup ngrok http 8501 > ngrok.log 2>&1 &
-        sleep 15
-        PUBLIC_URL=$(curl -s http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')
-        echo "Your Streamlit app is available at: $PUBLIC_URL"
-
-    - name: Check ngrok logs
-      run: cat ngrok.log
+        echo "Configuring Streamlit Cloud deployment..."
+        streamlit config set server.headless true
+        streamlit run app.py
