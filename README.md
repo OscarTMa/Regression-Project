@@ -123,13 +123,13 @@ This workflow outlines the steps for deploying the application on an AWS EC2 ins
 **Key Steps:**
     - **Launch an EC2 Instance:** Use the AWS Management Console or AWS CLI to create an instance.
     - **User Data File:** Copy the commands in workflows_aws/ec2_AWS.txt and paste them into the "User Data" field during the instance setup. These commands:
-    -- Install Python, pip, and Streamlit.
-    -- Install dependencies from requirements.txt.
-    -- Launch the application on the configured port.
+        - Install Python, pip, and Streamlit.                  
+        - Install dependencies from requirements.txt.                  
+        - Launch the application on the configured port.                    
 
-**Benefits:**
-  - Full control over the runtime environment.
-  - Scalability to handle varying levels of traffic and usage.                                    
+    - **Benefits:**
+       - Full control over the runtime environment.
+       - Scalability to handle varying levels of traffic and usage.                                    
 
 ## Summary
 Each workflow serves a distinct purpose:
