@@ -20,27 +20,8 @@ jobs:
       with:
         python-version: 3.9
 
-    - name: Install Python build dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y python3-distutils build-essential python3-dev
-        pip install --upgrade pip setuptools wheel
-
     - name: Install dependencies
       run: pip install -r requirements.txt
-
-    - name: Set Kaggle credentials
-      run: |
-        mkdir -p ~/.kaggle
-        echo "{\"username\": \"${{ secrets.KAGGLE_USERNAME }}\", \"key\": \"${{ secrets.KAGGLE_KEY }}\"}" > ~/.kaggle/kaggle.json
-        chmod 600 ~/.kaggle/kaggle.json
-    
-    - name: Verify DIRECTORIES
-      run: |
-        echo ========================================
-        ls -la 
-        echo ========================================
-        #ls -la /home/streamlit/.kaggle
 
     - name: Deploy to Streamlit Cloud
       env:
@@ -48,5 +29,5 @@ jobs:
         STREAMLIT_CLOUD_PASSWORD: ${{ secrets.STREAMLIT_CLOUD_PASSWORD }}
       run: |
         echo "Configuring Streamlit Cloud deployment..."
-        #streamlit config set server.headless true
+        streamlit config set server.headless true
         streamlit run app.py
