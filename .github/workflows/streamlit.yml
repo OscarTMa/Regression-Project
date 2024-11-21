@@ -29,12 +29,6 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Set Kaggle credentials
-      run: |
-        mkdir -p ~/.kaggle
-        echo "{\"username\": \"${{ secrets.KAGGLE_USERNAME }}\", \"key\": \"${{ secrets.KAGGLE_KEY }}\"}" > /home/adminuser/venv/lib/python3.12/site-packages/kaggle/kaggle.json
-        chmod 600 ~/.kaggle/kaggle.json
-    
     - name: Deploy to Streamlit Cloud
       env:
         STREAMLIT_CLOUD_EMAIL: ${{ secrets.STREAMLIT_CLOUD_EMAIL }}
@@ -42,4 +36,4 @@ jobs:
       run: |
         echo "Configuring Streamlit Cloud deployment..."
         #streamlit config set server.headless true
-        streamlit run app.py
+        streamlit run StreamlitFilesSystem.py
