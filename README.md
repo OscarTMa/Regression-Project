@@ -36,6 +36,7 @@ Regression is a fundamental supervised machine learning technique used to predic
 1.Build a robust regression model to predict [target variable, e.g., house prices].                                      
 2.Explore and visualize patterns in the data.                                                 
 3.Highlight practical insights for stakeholders, such as the most influential factors affecting the target variable.                                          
+4.This project provides three distinct **workflows** to enable deployment and environment setup across various platforms. Each is designed for specific use cases
 
 ## Technologies Used
 - Python for data processing and modeling.
