@@ -43,6 +43,9 @@ Regression is a fundamental supervised machine learning technique used to predic
 - Pandas and NumPy for data manipulation.
 - Matplotlib and Seaborn for visualizations.
 - Scikit-learn for machine learning algorithms and metrics.
+- EC2 AWS
+- Streamlit Cloud
+- Ngrok
 
 
 ## Installation
